@@ -7,17 +7,15 @@ public class MusicManager : MonoBehaviour
 	new AudioSource audio;
 
 	float fadeInTimer;
-	[SerializeField]
-	float startTime;
 
-	[Range(0, 1)]
+	public float startTime;
 	public float maxFadeInVolume;
-	[Range(0, 5)]
 	public float fadeInDuration;
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		fadeInTimer = 0f;
 		audio = gameObject.GetComponent<AudioSource>();
 
 		// start from user-set position with high precision

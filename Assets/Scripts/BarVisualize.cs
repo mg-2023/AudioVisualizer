@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BarManager : MonoBehaviour
+public class BarVisualize : MonoBehaviour
 {
 	const int COUNT = 2048;
 
-	int bandCount;
 	public AudioSource BGM;
 
 	GameObject[] bars;
@@ -24,12 +23,9 @@ public class BarManager : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		GenerateBar generateBar = FindObjectOfType<GenerateBar>();
-		bandCount = generateBar.BarCount;
-
 		bars = GameObject.FindGameObjectsWithTag("Bar");
-		sr = new SpriteRenderer[bandCount];
-		for(int i=0; i<bandCount; i++)
+		sr = new SpriteRenderer[bars.Length];
+		for(int i=0; i<bars.Length; i++)
 		{
 			sr[i] = bars[i].GetComponent<SpriteRenderer>();
 		}
@@ -55,14 +51,12 @@ public class BarManager : MonoBehaviour
 
 	void VisualizeAudio()
 	{
-		for (int i = 0; i < bandCount; i++)
+		for (int i = 0; i < bars.Length; i++)
 		{
 			bars[i].transform.localScale =
 				new Vector3(bars[i].transform.localScale.x,
 				(Mathf.Log(meanFreq[bands[i]] + 0.00005f, 2) + 14.5f) * 1.5f,
 				bars[i].transform.localScale.z);
-
-			sr[i].color = Color.HSVToRGB((float)i / (float)bandCount, 1f, 1f);
 		}
 	}
 }

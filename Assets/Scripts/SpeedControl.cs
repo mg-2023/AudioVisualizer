@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +14,7 @@ public class SpeedControl : MonoBehaviour
 	{
 		speedControl[0].onClick.AddListener(atempo);
 		speedControl[1].onClick.AddListener(reverse);
+
 		speedSet.text = "1.0";
 	}
 
