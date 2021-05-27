@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BarColor : MonoBehaviour
 {
+	float switchColorTimer;
+
 	GameObject[] bars;
 	SpriteRenderer[] sr;
 
@@ -20,9 +22,13 @@ public class BarColor : MonoBehaviour
 	[ColorUsage(true, false)]
 	public Color color2;
 
+	public float loopTimer;
+
 	// Start is called before the first frame update
 	void Start()
 	{
+		switchColorTimer = 0f;
+
 		bars = GameObject.FindGameObjectsWithTag("Bar");
 		sr = new SpriteRenderer[bars.Length];
 		for (int i = 0; i < bars.Length; i++)
@@ -40,7 +46,7 @@ public class BarColor : MonoBehaviour
 	void SetColor()
 	{
 		// forces bar color to rainbow
-		if (enableRainbow)
+		if (enableRainbow && !interpolateColor)
 		{
 			for (int i = 0; i < bars.Length; i++)
 			{
@@ -48,8 +54,21 @@ public class BarColor : MonoBehaviour
 			}
 		}
 
+		// forces bar color to rainbow + color automatically switches
+		else if (enableRainbow && interpolateColor)
+        {
+			switchColorTimer += Time.deltaTime/loopTimer;
+			if (switchColorTimer > 1f)
+				switchColorTimer = 0f;
+
+			for (int i = 0; i < bars.Length; i++)
+			{
+				sr[i].color = Color.HSVToRGB(switchColorTimer, 1f, 1f);
+			}
+		}
+
 		// bar color interpolates between two colors
-		else if (interpolateColor)
+		else if (!enableRainbow && interpolateColor)
 		{
 			for (int i = 0; i < bars.Length; i++)
 			{
