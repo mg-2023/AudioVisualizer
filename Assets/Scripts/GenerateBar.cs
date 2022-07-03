@@ -9,7 +9,7 @@ public class GenerateBar : MonoBehaviour
 
 	void Awake()
 	{
-		BarCount = 64;
+		BarCount = 256;
 
 		for(int i=1; i<BarCount; i++)
 		{

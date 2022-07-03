@@ -507,8 +507,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400899974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.75, y: -9, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.1, z: 1}
+  m_LocalPosition: {x: -15.9375, y: -9, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -623,19 +623,18 @@ AudioSource:
   m_GameObject: {fileID: 759230283}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: c56c5b557e74562439581356c681db38,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 90fc80034eda6a542acbd5f579e57f43, type: 3}
-  m_PlayOnAwake: 0
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8651f2bee7dc2414584edc888f99f6a1, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 0
+  Priority: 127
   DopplerLevel: 1
-  MinDistance: 5.758196
+  MinDistance: 10
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -737,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bccd4d6a1be6d9b40808c234d2f8e446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxFadeInVolume: 0.2
+  maxFadeInVolume: 0.15
   fadeInDuration: 0
 --- !u!1 &815484829
 GameObject:
@@ -797,9 +796,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enableRainbow: 1
-  interpolateColor: 1
-  color1: {r: 0.5019608, g: 0, b: 1, a: 1}
-  color2: {r: 1, g: 0, b: 1, a: 1}
+  interpolateColor: 0
+  color1: {r: 0.9208026, g: 0, b: 1, a: 1}
+  color2: {r: 0.5046811, g: 0, b: 1, a: 1}
   loopTimer: 8
 --- !u!1 &829979448
 GameObject:
@@ -1813,7 +1812,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526961301}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

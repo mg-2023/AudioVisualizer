@@ -23,8 +23,7 @@ public class SpeedControl : MonoBehaviour
 	{
 		if(!speedSet.isFocused)
 		{
-			float value;
-			if (float.TryParse(speedSet.text, out value))
+			if (float.TryParse(speedSet.text, out float value))
 				audio.pitch = value;
 
 			else
